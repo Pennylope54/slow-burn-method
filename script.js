@@ -1,100 +1,94 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4ede3;
-  color: #222;
+const days = [
+  {
+    title: "Day 1: Begin Gently",
+    focus: "Intention: Start softly and simply.",
+    instruction: "Walk slowly for 5 minutes. Keep your shoulders relaxed and breathe naturally.",
+    prompt: "What did it feel like to slow down?"
+  },
+  {
+    title: "Day 2: Breath and Posture",
+    focus: "Intention: Notice your breath and stand tall.",
+    instruction: "Walk for 6 minutes. Keep your head lifted and your breath steady.",
+    prompt: "How did your body respond to better posture?"
+  },
+  {
+    title: "Day 3: Slowing Down",
+    focus: "Intention: Move with calm attention.",
+    instruction: "Walk for 7 minutes at a slower pace than usual.",
+    prompt: "What changed when you slowed your pace?"
+  }
+];
+
+for (let i = 4; i <= 30; i++) {
+  days.push({
+    title: `Day ${i}`,
+    focus: "Intention: Stay present and keep going.",
+    instruction: `Complete your mindful walking practice for ${Math.min(5 + i, 20)} minutes.`,
+    prompt: "What did you notice in your mind and body today?"
+  });
 }
 
-.app {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 20px;
+let completedDays = JSON.parse(localStorage.getItem("completedDays")) || [];
+let currentDay = completedDays.length + 1;
+
+if (currentDay > 30) currentDay = 30;
+
+const dayTitle = document.getElementById("dayTitle");
+const dayFocus = document.getElementById("dayFocus");
+const dayInstruction = document.getElementById("dayInstruction");
+const dayPrompt = document.getElementById("dayPrompt");
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+const completeBtn = document.getElementById("completeBtn");
+const saveJournalBtn = document.getElementById("saveJournalBtn");
+const saveMessage = document.getElementById("saveMessage");
+
+function loadDay() {
+  const dayData = days[currentDay - 1];
+  dayTitle.textContent = dayData.title;
+  dayFocus.textContent = dayData.focus;
+  dayInstruction.textContent = dayData.instruction;
+  dayPrompt.textContent = dayData.prompt;
+
+  const percent = (completedDays.length / 30) * 100;
+  progressFill.style.width = percent + "%";
+  progressText.textContent = `${completedDays.length} of 30 days completed`;
 }
 
-.hero {
-  text-align: center;
-  padding: 24px 16px;
-}
+completeBtn.addEventListener("click", () => {
+  if (!completedDays.includes(currentDay)) {
+    completedDays.push(currentDay);
+    localStorage.setItem("completedDays", JSON.stringify(completedDays));
 
-h1 {
-  margin-bottom: 8px;
-  font-size: 2rem;
-}
+    if (currentDay < 30) {
+      currentDay += 1;
+      loadDay();
+    } else {
+      progressFill.style.width = "100%";
+      progressText.textContent = "30 of 30 days completed";
+      dayTitle.textContent = "Challenge Complete";
+      dayFocus.textContent = "You did it.";
+      dayInstruction.textContent = "You completed the Slow Burn Method challenge.";
+      dayPrompt.textContent = "What are you most proud of?";
+    }
+  }
+});
 
-.subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-}
+saveJournalBtn.addEventListener("click", () => {
+  const entry = document.getElementById("journalEntry").value;
+  const mood = document.getElementById("mood").value;
+  const energy = document.getElementById("energy").value;
+  const stress = document.getElementById("stress").value;
 
-.intro {
-  line-height: 1.6;
-}
+  const journalData = {
+    entry,
+    mood,
+    energy,
+    stress
+  };
 
-.card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 20px;
-  margin: 18px 0;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
+  localStorage.setItem(`journalDay${currentDay}`, JSON.stringify(journalData));
+  saveMessage.textContent = "Journal saved.";
+});
 
-.progress-wrap {
-  margin-top: 20px;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 16px;
-  background: #ddd2c3;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-#progressFill {
-  height: 100%;
-  width: 0%;
-  background: #222;
-  transition: width 0.3s ease;
-}
-
-button {
-  margin-top: 14px;
-  padding: 12px 18px;
-  border: none;
-  border-radius: 999px;
-  background: #222;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-textarea,
-select {
-  width: 100%;
-  margin-top: 8px;
-  margin-bottom: 14px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  box-sizing: border-box;
-  font-size: 1rem;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.prompt {
-  font-style: italic;
-}
-
-.questions {
-  padding-left: 20px;
-  line-height: 1.7;
-}
-
-#saveMessage {
-  font-weight: bold;
-}
+loadDay();
