@@ -112,3 +112,7 @@ label {
   font-weight: bold;
   margin-top: 10px;
 }
+#resetBtn {
+  background: #b7aa9a;
+  margin-top: 10px;
+}
