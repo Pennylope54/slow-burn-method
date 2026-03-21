@@ -148,7 +148,6 @@ completeBtn.addEventListener("click", () => {
     }
   }
 });
-
 saveJournalBtn.addEventListener("click", () => {
   const currentDay = getCurrentDayToShow();
   const entry = document.getElementById("journalEntry").value;
@@ -157,6 +156,16 @@ saveJournalBtn.addEventListener("click", () => {
   const stress = document.getElementById("stress").value;
 
   const journalData = {
+    entry,
+    mood,
+    energy,
+    stress
+  };
+
+  localStorage.setItem(`journalDay${currentDay}`, JSON.stringify(journalData));
+  saveMessage.textContent = "Journal saved ✅";
+});
+
     entry,
     mood,
     energy,
