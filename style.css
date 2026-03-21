@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f3ede3;
+  color: #2b2b2b;
+}
+
+.app {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 20px 18px 40px;
+}
+
+.hero {
+  text-align: center;
+  padding: 30px 14px 20px;
+}
+
+.top-tag {
+  color: #b9732f;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.05;
+  margin: 0 0 12px;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  line-height: 1.35;
+  margin: 0 0 18px;
+  color: #5f5a55;
+  font-weight: 500;
+}
+
+.intro {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.hero-note {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #6b6259;
+}
+
+.card {
+  background: #fffdf9;
+  border-radius: 22px;
+  padding: 26px 22px;
+  margin: 20px 0;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+}
+
+.progress-wrap {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  height: 14px;
+  background: #ddd2c1;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: #b9732f;
+  transition: width 0.3s ease;
+}
+
+#progressText {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  font-weight: 800;
+}
+
+button {
+  width: 100%;
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 999px;
+  background: #2b2b2b;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+#resetBtn {
+  background: #b9732f;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #5a5148;
+}
+
+textarea,
+select {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #d8cdbd;
+  font-size: 1.05rem;
+  background: #fff;
+  color: #2b2b2b;
+  margin: 0 0 14px;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.prompt {
+  font-style: italic;
+  color: #7a7167;
+  font-size: 1.05rem;
+}
+
+.questions {
+  padding-left: 24px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+#saveMessage {
+  color: #b9732f;
+  font-weight: 700;
+  margin-top: 8px;
+  min-height: 24px;
+  font-size: 1rem;
+}
+
+html, body {
+  overscroll-behavior: none;
+}
