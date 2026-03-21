@@ -54,7 +54,6 @@ function loadDay() {
   progressFill.style.width = percent + "%";
   progressText.textContent = `${completedDays.length} of 30 days completed`;
 }
-
 completeBtn.addEventListener("click", () => {
   if (!completedDays.includes(currentDay)) {
     completedDays.push(currentDay);
