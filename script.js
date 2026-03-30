@@ -1,14 +1,7 @@
 const days = [
   {
     title: "Day 1: Begin Gently",
-   <p style="text-align:center; font-size:0.95rem;">
-Want the full guided program + journal?
-</p> <div style="text-align:center; margin:20px 0;">
-  <a href="http://moneymapguide.atwebpages.com/" target="_blank" 
-  style="display:inline-block; padding:16px 28px; background:#5E6B55; color:white; text-decoration:none; border-radius:30px; font-size:1.1rem; font-weight:500;">
-    Start the 30-Day Challenge
-  </a>
-</div>focus: "Intention: Start softly and simply.",
+    focus: "Intention: Start softly and simply.",
     instruction: "Walk slowly for 5 minutes. Keep your shoulders relaxed and breathe naturally.",
     prompt: "What did it feel like to slow down?"
   },
