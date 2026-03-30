@@ -192,7 +192,12 @@ resetBtn.addEventListener("click", () => {
 
   completedDays = [];
   startDate = null;
-
+<div style="text-align:center; margin:20px 0;">
+  <a href="http://moneymapguide.atwebpages.com/" target="_blank" 
+  style="display:inline-block; padding:16px 28px; background:#5E6B55; color:white; text-decoration:none; border-radius:30px; font-size:1.1rem; font-weight:500;">
+    Start the 30-Day Challenge
+  </a>
+</div>
   loadDay();
 });
 
