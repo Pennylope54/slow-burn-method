@@ -190,3 +190,15 @@ resetBtn.addEventListener("click", () => {
 });
 
 loadDay();
+
+if (typeof module !== 'undefined') {
+  module.exports = {
+    days,
+    getTodayLocalMidnight,
+    getStartDate,
+    getUnlockedDay,
+    getCurrentDayToShow,
+    updateProgress,
+    loadDay
+  };
+}
