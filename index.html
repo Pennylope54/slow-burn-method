@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="apple-touch-icon" href="slowburnlogo.png">
+<link rel="icon" href="slowburnlogo.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Slow Burn"> <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Slow Burn Method</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- App feel -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Slow Burn">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#f3ede3">
+
+  <style>
+    body {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <header class="hero">
+      <p class="top-tag">Menopause Wellness Bundle</p>
+
+      <h1>Slow Burn Method</h1>
+
+      <p class="subtitle">
+        Slow Burn Method + 30-Day Tai Chi Challenge
+      </p>
+
+      <p class="intro">
+        Welcome to Slow Burn Method, a gentle 30-day Tai Chi challenge
+        designed to help you reconnect with your body through mindful movement,
+        breath, and reflection.
+      </p>
+
+      <p class="hero-note">
+        A gentle, beginner-friendly walking and Tai Chi journey created to support
+        energy, balance, stress relief, and consistency.
+      </p>
+
+      <button onclick="window.scrollTo({top: 700, behavior: 'smooth'})">
+        Start Today
+      </button>
+
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div id="progressFill"></div>
+        </div>
+        <p id="progressText">0 of 30 days completed</p>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="card">
+        <h2 id="dayTitle">Day 1</h2>
+        <p id="dayFocus"></p>
+        <p id="dayInstruction"></p>
+        <p id="dayPrompt" class="prompt"></p>
+
+        <button id="completeBtn">Mark Day Complete</button>
+        <button id="resetBtn">Reset Progress</button>
+      </section>
+
+      <section class="card">
+        <h2>Today’s Journal</h2>
+
+        <label>How do you feel today?</label>
+        <textarea id="journalEntry" rows="6" placeholder="Write here..."></textarea>
+
+        <label>Mood</label>
+        <select id="mood">
+          <option value="">Choose one</option>
+          <option>Calm</option>
+          <option>Good</option>
+          <option>Tired</option>
+          <option>Stressed</option>
+          <option>Motivated</option>
+        </select>
+
+        <label>Energy (1–5)</label>
+        <select id="energy">
+          <option value="">Choose one</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+
+        <label>Stress (1–5)</label>
+        <select id="stress">
+          <option value="">Choose one</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+
+        <button id="saveJournalBtn">Save Journal</button>
+        <p id="saveMessage"></p>
+      </section>
+
+      <section class="card">
+        <h2>Week 1 Check-In</h2>
+        <ul class="questions">
+          <li>How has my energy felt this week?</li>
+          <li>What time of day did I feel best during practice?</li>
+          <li>What helped me stay consistent?</li>
+          <li>What felt easier by the end of the week?</li>
+          <li>What do I want to improve next week?</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>You’re doing better than you think</h2>
+        <p>
+          This journey isn’t about perfection. It’s about showing up,
+          even on the hard days. Keep going.
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
